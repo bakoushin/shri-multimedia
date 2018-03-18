@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Termo Vision</title>
+</head>
+<body>
+  <menu class="menu">
+    <menuitem class="menu__item menu__item-video menu__item--selected">Video</menuitem>
+    <menuitem class="menu__item menu__item-canvas">Canvas</menuitem>
+  </menu>
+  <main class="main main--filter">
+    <video class="main__video" muted>Video is not supported, my friend. Sorry.</video>
+    <canvas class="main__canvas --hidden" width="640" height="480"></canvas>
+    <pre class="main__text-column main__text-column-left"></pre>
+    <pre class="main__text-column main__text-column-right"></pre>
+    <div class="main__noise"></div>
+    <canvas class="main__audio-display"></canvas>
+  </main>
+  <svg>
+    <filter id="termo-vision">
+      <!-- convert to grayscale -->
+      <feColorMatrix type="matrix" result="grayscale"
+        values="1 0 0 0 0
+                1 0 0 0 0
+                1 0 0 0 0
+                0 0 0 1 0" >
+      </feColorMatrix>
+      <!-- gradient color mapping: black - red - white -->
+      <feComponentTransfer color-interpolation-filters="sRGB">
+        <feFuncR type="table" tableValues="0 1 1"></feFuncR>
+        <feFuncG type="table" tableValues="0 0 1"></feFuncG>
+        <feFuncB type="table" tableValues="0 0 1"></feFuncB>
+      </feComponentTransfer>      
+    </filter>
+  </svg>
+  <script src="script.js"></script>
+</body>
+</html>
