@@ -79,7 +79,8 @@ svg {
   bottom: 0;
   left: 0;
   right: 0;
-  background: url(media/noise4.webp) no-repeat;
+  background-image: url(media/noise4.webp), url(media/noise4.gif);
+  background-repeat: no-repeat;
   background-size: 100% 100%;
   mix-blend-mode: soft-light;
 }
