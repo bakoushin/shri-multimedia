@@ -49,6 +49,7 @@ svg {
   margin: 0 .5em;
   color: rgba(255, 255, 255, .95);
   font: 1.5em/1 'Terminator', sans-serif; 
+  letter-spacing: .18em;
   cursor: pointer;
   border: 1px solid #fff;
   background: #4448;
