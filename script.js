@@ -6,7 +6,7 @@
     const canvas = document.querySelector('.main__canvas');
     const main = document.querySelector('.main');
 
-    let blinkingElements = new Set;
+    let blinkingElements = new Set();
     
     navigator.mediaDevices.getUserMedia({
       audio: true,
